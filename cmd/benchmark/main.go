@@ -21,10 +21,10 @@ import (
 type workloadKind string
 
 const (
-	kindExact     workloadKind = "HIT-EXACT"
-	kindSemantic  workloadKind = "HIT-SEMANTIC"
-	kindMiss      workloadKind = "MISS"
-	kindUnknown   workloadKind = "UNKNOWN"
+	kindExact    workloadKind = "HIT-EXACT"
+	kindSemantic workloadKind = "HIT-SEMANTIC"
+	kindMiss     workloadKind = "MISS"
+	kindUnknown  workloadKind = "UNKNOWN"
 )
 
 type requestSpec struct {

@@ -16,7 +16,7 @@ import (
 
 const (
 	semanticIndexName = "idx:semantic_cache"
-	docKeyPrefix    = "doc:"
+	docKeyPrefix      = "doc:"
 )
 
 // RedisCache implements domain.CacheRepository using exact keys and RediSearch HNSW.

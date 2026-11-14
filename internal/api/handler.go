@@ -16,11 +16,11 @@ import (
 )
 
 const (
-	headerCacheNamespace = "X-Cache-Namespace"
-	headerCacheStatus    = "X-Cache-Status"
+	headerCacheNamespace  = "X-Cache-Namespace"
+	headerCacheStatus     = "X-Cache-Status"
 	headerCacheSimilarity = "X-Cache-Similarity"
-	headerMatchedPrompt  = "X-Matched-Prompt"
-	headerLatencyMs      = "X-Latency-Ms"
+	headerMatchedPrompt   = "X-Matched-Prompt"
+	headerLatencyMs       = "X-Latency-Ms"
 
 	defaultNamespace = "default"
 
@@ -43,14 +43,14 @@ type LLMCompleter interface {
 
 // ChatHandler serves OpenAI-compatible chat routes backed by the semantic cache.
 type ChatHandler struct {
-	cache       domain.CacheRepository
-	embedder    domain.EmbeddingProvider
-	llm         LLMCompleter
-	writer      CacheWriter
-	stats       *metrics.StatsTracker
-	redis       *redis.Client
-	threshold   float64
-	logger      *slog.Logger
+	cache     domain.CacheRepository
+	embedder  domain.EmbeddingProvider
+	llm       LLMCompleter
+	writer    CacheWriter
+	stats     *metrics.StatsTracker
+	redis     *redis.Client
+	threshold float64
+	logger    *slog.Logger
 }
 
 // NewChatHandler wires HTTP handlers for chat, health, and stats.

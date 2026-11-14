@@ -6,27 +6,27 @@ import (
 
 // StatsTracker aggregates request and cache outcomes with lock-free counters.
 type StatsTracker struct {
-	totalRequests             atomic.Uint64
-	exactHits                 atomic.Uint64
-	semanticHits              atomic.Uint64
-	cacheMisses               atomic.Uint64
-	totalLatencyMs            atomic.Uint64
-	savedLatencyMs            atomic.Uint64
+	totalRequests              atomic.Uint64
+	exactHits                  atomic.Uint64
+	semanticHits               atomic.Uint64
+	cacheMisses                atomic.Uint64
+	totalLatencyMs             atomic.Uint64
+	savedLatencyMs             atomic.Uint64
 	estimatedCostSavedMicroUSD atomic.Int64
 }
 
 // Snapshot is a point-in-time view of tracker counters and derived rates.
 type Snapshot struct {
-	TotalRequests            uint64  `json:"total_requests"`
-	ExactHits                uint64  `json:"exact_hits"`
-	SemanticHits             uint64  `json:"semantic_hits"`
-	CacheMisses              uint64  `json:"cache_misses"`
-	TotalLatencyMs           uint64  `json:"total_latency_ms"`
-	SavedLatencyMs           uint64  `json:"saved_latency_ms"`
-	EstimatedCostSavedUSD    float64 `json:"estimated_cost_saved_usd"`
-	HitRatePercent           float64 `json:"hit_rate_percent"`
-	AvgLatencyMs             float64 `json:"avg_latency_ms"`
-	AvgSavedLatencyMsPerHit  float64 `json:"avg_saved_latency_ms_per_hit"`
+	TotalRequests           uint64  `json:"total_requests"`
+	ExactHits               uint64  `json:"exact_hits"`
+	SemanticHits            uint64  `json:"semantic_hits"`
+	CacheMisses             uint64  `json:"cache_misses"`
+	TotalLatencyMs          uint64  `json:"total_latency_ms"`
+	SavedLatencyMs          uint64  `json:"saved_latency_ms"`
+	EstimatedCostSavedUSD   float64 `json:"estimated_cost_saved_usd"`
+	HitRatePercent          float64 `json:"hit_rate_percent"`
+	AvgLatencyMs            float64 `json:"avg_latency_ms"`
+	AvgSavedLatencyMsPerHit float64 `json:"avg_saved_latency_ms_per_hit"`
 }
 
 // RecordRequest updates counters for a completed request.

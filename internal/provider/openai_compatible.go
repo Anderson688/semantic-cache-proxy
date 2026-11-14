@@ -38,12 +38,12 @@ func (e *APIError) Error() string {
 
 // OpenAICompatibleClient calls OpenAI-compatible /embeddings and /chat/completions endpoints.
 type OpenAICompatibleClient struct {
-	baseURL      string
-	apiKey       string
-	httpClient   *http.Client
-	llmModel     string
+	baseURL        string
+	apiKey         string
+	httpClient     *http.Client
+	llmModel       string
 	embeddingModel string
-	embeddingDim int
+	embeddingDim   int
 }
 
 // ClientOption configures optional behavior for OpenAICompatibleClient.
