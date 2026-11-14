@@ -13,11 +13,11 @@ Cache misses call the upstream LLM asynchronously back-fill Redis via a bounded 
  Client                semantic-cache-proxy                         Upstream
    |                           |                                       |
    | POST /v1/chat/completions |                                       |
-   |------------------------->| 1) Normalize + exact GET              |
+   |-------------------------->| 1) Normalize + exact GET              |
    |                           | 2) Embed + FT.SEARCH KNN              |
    |                           | 3) On miss: LLM + async Store         |---> LLM API
    |                           |       (worker pool)                   |---> Embeddings API
-   |<-------------------------|                                       |
+   |<--------------------------|                                       |
    |  JSON + X-Cache-* headers |                                       |
    v                           v                                       v
                         +------------+
